@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border: 1px solid black;
+        height: 100px;
+        width: 100%;
+    }
+    tr{
+        border: 1px solid black;
+        height: 100px;
+        width: 30%;
+    }
+    td{
+        border: 1px solid black;
+        height: 100px;
+        width: 30%;
+    }
+    #search{
+        border: 1px solid black;
+        box-sizing: border-box;
+        height: 50px;
+        width: 30%;
+        justify-content: center;
+    }
+</style>
+<body>
+    <label for="">Name
+    <input type="text" id="search" onkeyup="newUser()">
+</label>
+<label for="">Class
+    <input type="text" id="search" onkeyup="newUser()">
+</label>
+    <table id="Mytable">
+        <tr id="header">
+            <td>Name</td>
+            <td>Age</td>
+            <td>Class</td>
+        </tr>
+            <tr>
+            <td>Rida</td>
+            <td>22</td>
+            <td>2211</td>
+        </tr>
+            <tr>
+            <td>Mubashir</td>
+            <td>19</td>
+            <td>2233</td>
+        </tr>
+            <tr>
+            <td>Abdulla</td>
+            <td>21</td>
+            <td>2210</td>
+        </tr>
+    </table>
+
+    <script>
+        function  newUser (){
+            let userName = document.getElementById('search').value.toUpperCase();
+            let Mytable = document.getElementById('Mytable');
+            let tr = Mytable.getElementsByTagName('tr');
+
+               for( i=0; i<tr.length; i++){
+                   let td = tr[i].getElementsByTagName('td')[0];
+                if(td){
+                    let searchValue = td.innerHTML;
+                    if(searchValue.toUpperCase().indexOf()> -1){
+                        tr[i].style.display="";
+                    }
+                    else{
+                        tr[i].style.display="none";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
